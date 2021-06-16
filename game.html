@@ -53,16 +53,16 @@
     function game(){
         for(i=0; i<5; i++){
             console.log(playRound(playerSelection(), computerPlay()));
-            console.log("The score is YOU: " + playerScore + " COMPUTER: " + computerScore)
+            console.log("The score is YOU: " + playerScore + " COMPUTER: " + computerScore);
         }
         if(playerScore < computerScore){
-            console.log("You lose :(")
+            console.log("You lose :(");
         }
         else if(playerScore == computerScore){
-            console.log("You tied :/")
+            console.log("You tied :/");
         }
         else{
-            console.log("You win!!!")
+            console.log("You win!!!");
         }
     }
 
