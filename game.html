@@ -25,25 +25,49 @@
             return "Tie. " + playerSelection + " ties " + computerSelection;
         }
         if((playerSelection === 'Rock') && (computerSelection === "Scissors")){
+            playerScore++
             return "You Win! Rock beats Scissors";
         }
         if((playerSelection === 'Rock') && (computerSelection === "Paper")){
+            computerScore++
             return "You Lose! Paper beats Rock";
         }
         if((playerSelection === 'Paper') && (computerSelection === "Rock")){
+            playerScore++
             return "You Win! Paper beats Rock";
         }
         if((playerSelection === 'Paper') && (computerSelection === "Scissors")){
+            computerScore++
             return "You Lose! Scissors beats Paper";
         }
         if((playerSelection === 'Scissors') && (computerSelection === "Paper")){
+            playerScore++
             return "You Win! Scissors beats Paper";
         }
         if((playerSelection === 'Scissors') && (computerSelection === "Rock")){
+            computerScore++
             return "You Lose! Rock beats Scissors";
         }
     }
 
-    console.log(playRound(playerSelection(), computerPlay()))
+    function game(){
+        for(i=0; i<5; i++){
+            console.log(playRound(playerSelection(), computerPlay()));
+            console.log("The score is YOU: " + playerScore + " COMPUTER: " + computerScore)
+        }
+        if(playerScore < computerScore){
+            console.log("You lose :(")
+        }
+        else if(playerScore == computerScore){
+            console.log("You tied :/")
+        }
+        else{
+            console.log("You win!!!")
+        }
+    }
+
+    let playerScore = 0;
+    let computerScore = 0;
+    game();
 
 </script>
