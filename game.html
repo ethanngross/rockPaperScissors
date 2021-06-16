@@ -11,5 +11,16 @@
             return 'Scissors'
         }
     }
-    console.log(computerPlay())
+
+    function playerSelection(){
+        //No default text could result in issues***
+        return window.prompt("Choose 'Rock', 'Paper', or 'Scissors'").toLowerCase();
+    }
+
+    function playRound(playerSelection, computerSelection){
+
+    }
+
+    console.log(computerPlay());
+    console.log(playerSelection());
 </script>
