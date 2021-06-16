@@ -14,13 +14,36 @@
 
     function playerSelection(){
         //No default text could result in issues***
-        return window.prompt("Choose 'Rock', 'Paper', or 'Scissors'").toLowerCase();
+        let choice = window.prompt("Choose 'Rock', 'Paper', or 'Scissors'").toLowerCase();
+        return choice.charAt(0).toUpperCase() + choice.slice(1);
     }
 
     function playRound(playerSelection, computerSelection){
-
+        console.log(playerSelection)
+        console.log(computerSelection)
+        if (playerSelection === computerSelection){
+            return "Tie. " + playerSelection + " ties " + computerSelection;
+        }
+        if((playerSelection === 'Rock') && (computerSelection === "Scissors")){
+            return "You Win! Rock beats Scissors";
+        }
+        if((playerSelection === 'Rock') && (computerSelection === "Paper")){
+            return "You Lose! Paper beats Rock";
+        }
+        if((playerSelection === 'Paper') && (computerSelection === "Rock")){
+            return "You Win! Paper beats Rock";
+        }
+        if((playerSelection === 'Paper') && (computerSelection === "Scissors")){
+            return "You Lose! Scissors beats Paper";
+        }
+        if((playerSelection === 'Scissors') && (computerSelection === "Paper")){
+            return "You Win! Scissors beats Paper";
+        }
+        if((playerSelection === 'Scissors') && (computerSelection === "Rock")){
+            return "You Lose! Rock beats Scissors";
+        }
     }
 
-    console.log(computerPlay());
-    console.log(playerSelection());
+    console.log(playRound(playerSelection(), computerPlay()))
+
 </script>
